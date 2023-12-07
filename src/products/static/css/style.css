@@ -1,0 +1,83 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f2f2;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #232f3e;
+  color: #fff;
+  padding: 16px;
+  text-align: center;
+}
+
+.product-card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 16px;
+}
+
+.card {
+  width: 300px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin: 16px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 16px;
+}
+
+.product-title {
+  font-size: 1.2em;
+  margin-bottom: 8px;
+}
+
+.product-rating {
+  color: #ffa500;
+  margin-bottom: 8px;
+}
+
+.product-price {
+  color: #B12704;
+  font-size: 1.3em;
+  font-weight: bold;
+}
+
+.prime-badge {
+  background-color: #232f3e;
+  color: #fff;
+  padding: 4px;
+  border-radius: 4px;
+  font-size: 0.8em;
+  margin-bottom: 8px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #f0c14b;
+  color: #111;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #d2ac30;
+}

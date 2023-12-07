@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Listing</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+<header>
+  <h1>Product Listing</h1>
+</header>
+
+<div class="product-card">
+  <div class="card">
+    <img src="https://placekitten.com/300/200" alt="Product Image 1">
+    <div class="card-content">
+      <div class="product-title">Product Name 1</div>
+      <div class="product-rating">4.5 out of 5 stars</div>
+      <div class="product-price">$19.99</div>
+      <div class="prime-badge">Amazon Prime</div>
+      <a href="#" class="btn">Add to Cart</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://placekitten.com/300/201" alt="Product Image 2">
+    <div class="card-content">
+      <div class="product-title">Product Name 2</div>
+      <div class="product-rating">4.8 out of 5 stars</div>
+      <div class="product-price">$24.99</div>
+      <div class="prime-badge">Amazon Prime</div>
+      <a href="#" class="btn">Add to Cart</a>
+    </div>
+  </div>
+
+  <!-- Add more product cards as needed -->
+
+</div>
+
+</body>
+</html>
