@@ -10,12 +10,16 @@
 </head>
 
 <body>
-    <h1>{% if form.instance.pk %}Edit{% else %}Add{% endif %} Product</h1>
-    <form method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Save</button>
-    </form>
-    <a href="{% url 'web:index' %}">Cancel</a>
+    <header>
+        <h1>{% if form.instance.pk %}Edit{% else %}Add{% endif %} Product</h1>
+    </header>
+    <div class="form-body">
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Save</button>
+            <a class="cancel_btn" href="{% url 'web:index' %}">Cancel</a>
+        </form>
+    </div>
 </body>
 </html>

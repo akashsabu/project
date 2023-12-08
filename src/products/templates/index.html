@@ -12,29 +12,33 @@
     <header>
     <h1>Product Listing</h1>
     </header>
-
-    <div class="product-card">
-        {% for product in products %}
-        <div class="card">
-            <img src="{{product.image.url}}" alt="Product Image 1">
-            <div class="card-content">
-            <div class="product-title">{{product.name}}</div>
-            <div class="product-rating">4.5 out of 5 stars</div>
-            <div class="product-price">{{product.price}}$</div>
-            <div class="prime-badge">Amazon Prime</div>
-            <a href="{% url 'web:product_detail' pk=product.pk %}" class="btn">Show Details</a>
+    <div class="container">
+        {% if user.is_authenticated and user.is_staff %}
+        <a href="{% url 'web:product_create' %}">Add New Product</a>
+        {% endif %}
+    
+        <div class="product-card">
+            {% for product in products %}
+            <div class="card">
+                <img src="{{product.image.url}}" alt="Product Image 1">
+                <div class="card-content">
+                <div class="product-title">{{product.name}}</div>
+                <div class="product-rating">4.5 out of 5 stars</div>
+                <div class="product-price">{{product.price}}$</div>
+                {% comment %} <div class="prime-badge">Amazon Prime</div> {% endcomment %}
+                <a href="{% url 'web:product_detail' pk=product.pk %}" class="btn">Show Details</a>
+                </div>
             </div>
+            {% endfor %}
+        
+           
         </div>
-        {% endfor %}
+      
     </div>
     
 
 
 
-
-    {% if user.is_authenticated and user.is_staff %}
-    <a href="{% url 'web:product_create' %}">Add New Product</a>
-    {% endif %}
 
 </div>
 
