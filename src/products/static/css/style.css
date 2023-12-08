@@ -81,3 +81,41 @@ header {
 .btn:hover {
   background-color: #d2ac30;
 }
+
+a {
+  color: #007bff;
+  text-decoration: none;
+  margin-right: 10px;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+form {
+  max-width: 400px;
+  margin-top: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+}
+
+button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}

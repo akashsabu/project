@@ -17,7 +17,10 @@
     <img src="{{ product.image.url }}" alt="{{ product.name }} Image">
     <p>Description: {{ product.description }}</p>
     <p>Price: ${{ product.price }}</p>
-
+    
+    <a href="{% url 'web:index' %}">Back to Product List</a>
+    <a href="{% url 'web:product_update' pk=product.pk %}">Edit</a>
+    {% comment %} <a href="{% url 'product_delete' pk=product.pk %}">Delete</a>  {% endcomment %}
 
 </div>
 

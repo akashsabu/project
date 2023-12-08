@@ -33,7 +33,7 @@
 
 
     {% if user.is_authenticated and user.is_staff %}
-    <a href="#">Add New Product</a>
+    <a href="{% url 'web:product_create' %}">Add New Product</a>
     {% endif %}
 
 </div>
