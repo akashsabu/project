@@ -26,10 +26,12 @@
             </div>
         </div>
         {% endfor %}
-
     </div>
+    
 
-  <!-- Add more product cards as needed -->
+    {% if user.is_authenticated and user.is_staff %}
+    <a href="#">Add New Product</a>
+    {% endif %}
 
 </div>
 
