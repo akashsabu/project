@@ -22,12 +22,15 @@
             <div class="product-rating">4.5 out of 5 stars</div>
             <div class="product-price">{{product.price}}$</div>
             <div class="prime-badge">Amazon Prime</div>
-            <a href="#" class="btn">Add to Cart</a>
+            <a href="{% url 'web:product_detail' pk=product.pk %}" class="btn">Show Details</a>
             </div>
         </div>
         {% endfor %}
     </div>
     
+
+
+
 
     {% if user.is_authenticated and user.is_staff %}
     <a href="#">Add New Product</a>
