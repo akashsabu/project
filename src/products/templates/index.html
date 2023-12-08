@@ -4,15 +4,33 @@
     {% load static %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Listing</title>
+    <title>Products</title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
 
     <header>
-    <h1>Product Listing</h1>
+    <h1>Products</h1>
     </header>
+
+
+
     <div class="container">
+
+
+        <button class="open-dialog-button" onclick="openDialog()">Help</button>
+
+        <div class="overlay" id="dialogOverlay" onclick="closeDialog()">
+            <div class="dialog-box">
+                <span class="close-button" onclick="closeDialog()">&times;</span>
+                <h2>Log In as Admin from Django Admin </h2>
+                <p>Login as Admin to Add product. <br>
+                    Delete and Edit options in Product detail page.
+                </p>
+            </div>
+        </div>
+    
+
         {% if user.is_authenticated and user.is_staff %}
         <a href="{% url 'web:product_create' %}">Add New Product</a>
         {% endif %}
@@ -41,6 +59,17 @@
 
 
 </div>
+
+
+<script>
+    function openDialog() {
+        document.getElementById('dialogOverlay').style.display = 'flex';
+    }
+
+    function closeDialog() {
+        document.getElementById('dialogOverlay').style.display = 'none';
+    }
+</script>
 
 </body>
 </html>

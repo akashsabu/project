@@ -1,4 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
+
+import os
+
 from .models import Product
 from .forms import ProductForm
 
