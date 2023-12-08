@@ -13,6 +13,8 @@
     <header>
         <h1>{% if form.instance.pk %}Edit{% else %}Add{% endif %} Product</h1>
     </header>
+    
+    {% if user.is_authenticated and user.is_staff %}
     <div class="form-body">
         <form method="post" enctype="multipart/form-data">
             {% csrf_token %}
@@ -21,5 +23,13 @@
             <a class="cancel_btn" href="{% url 'web:index' %}">Cancel</a>
         </form>
     </div>
+    {% else %}
+    <h1 style="text-align:center;"> Admin Access Required!!!</h1>
+
+    <div style="display:flex;justify-content:center;">
+        <a class="cancel_btn"  href="{% url 'web:index' %}">Go back</a>
+    </div>
+    {% endif %}
+    
 </body>
 </html>

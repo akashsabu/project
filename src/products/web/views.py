@@ -33,6 +33,7 @@ def product_update(request, pk):
     if request.method == 'POST':
         form = ProductForm(request.POST,  request.FILES, instance=product)
         if form.is_valid():
+
             form.save()
             return redirect('web:index')
     else:

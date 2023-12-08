@@ -18,9 +18,10 @@
     <h1>{{ product.name }}</h1>
     <img src="{{ product.image.url }}" alt="{{ product.name }} Image">
     <p>Description: {{ product.description }}</p>
+    <p>Rating: {{ product.rating }} out of 5.0 stars</p>
     <p>Price: ${{ product.price }}</p>
     
-    <a href="{% url 'web:index' %}">Back to Product List</a>
+    <a href="{% url 'web:index' %}">Back to Products</a>
    
    
     {% if user.is_authenticated and user.is_staff %}

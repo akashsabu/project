@@ -13,13 +13,9 @@
     <h1>Products</h1>
     </header>
 
-
-
     <div class="container">
 
-
         <button class="open-dialog-button" onclick="openDialog()">Help</button>
-
         <div class="overlay" id="dialogOverlay" onclick="closeDialog()">
             <div class="dialog-box">
                 <span class="close-button" onclick="closeDialog()">&times;</span>
@@ -30,7 +26,6 @@
             </div>
         </div>
     
-
         {% if user.is_authenticated and user.is_staff %}
         <a href="{% url 'web:product_create' %}">Add New Product</a>
         {% endif %}
@@ -41,7 +36,7 @@
                 <img src="{{product.image.url}}" alt="Product Image 1">
                 <div class="card-content">
                 <div class="product-title">{{product.name}}</div>
-                <div class="product-rating">4.5 out of 5 stars</div>
+                <div class="product-rating">{{product.rating}} out of 5.0 stars</div>
                 <div class="product-price">{{product.price}}$</div>
                 {% comment %} <div class="prime-badge">Amazon Prime</div> {% endcomment %}
                 <a href="{% url 'web:product_detail' pk=product.pk %}" class="btn">Show Details</a>
