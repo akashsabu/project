@@ -1,70 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    {% load static %}
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Products</title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-</head>
-<body>
+    <head>
+        {% load static %}
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Products</title>
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    </head>
+    <body>
 
-    <header>
-    <h1>Products</h1>
-    </header>
+        <header>
+        <h1>Products</h1>
+        </header>
 
-    <div class="container">
-
-        <button class="open-dialog-button" onclick="openDialog()">Help</button>
-        <div class="overlay" id="dialogOverlay" onclick="closeDialog()">
-            <div class="dialog-box">
-                <span class="close-button" onclick="closeDialog()">&times;</span>
-                <h2>Log In as Admin from Django Admin </h2>
-                <p>Login as Admin to Add product. <br>
+        <div class="container">
+            <button class="open-dialog-button" onclick="openDialog()">Help</button>
+            <div class="overlay" id="dialogOverlay" onclick="closeDialog()">
+                <div class="dialog-box">
+                    <span class="close-button" onclick="closeDialog()">&times;</span>
+                    <h2>Log In as Admin from Django Admin </h2>
+                    <p>Login as Admin to Add product. <br>
                     Delete and Edit options in Product detail page.
-                </p>
-            </div>
-        </div>
-    
-        {% if user.is_authenticated and user.is_staff %}
-        <a href="{% url 'web:product_create' %}">Add New Product</a>
-        {% endif %}
-    
-        <div class="product-card">
-            {% for product in products %}
-            <div class="card">
-                <img src="{{product.image.url}}" alt="Product Image 1">
-                <div class="card-content">
-                <div class="product-title">{{product.name}}</div>
-                <div class="product-rating">{{product.rating}} out of 5.0 stars</div>
-                <div class="product-price">{{product.price}}$</div>
-                {% comment %} <div class="prime-badge">Amazon Prime</div> {% endcomment %}
-                <a href="{% url 'web:product_detail' pk=product.pk %}" class="btn">Show Details</a>
+                    </p>
                 </div>
             </div>
-            {% endfor %}
         
-           
-        </div>
-      
-    </div>
-    
+            {% if user.is_authenticated and user.is_staff %}
+            <a href="{% url 'web:product_create' %}">Add New Product</a>
+            {% endif %}
+        
+            <div class="product-card">
+                {% for product in products %}
+                <div class="card">
+                    <img src="{{product.image.url}}" alt="Product Image 1">
+                    <div class="card-content">
+                    <div class="product-title">{{product.name}}</div>
+                    <div class="product-rating">{{product.rating}} out of 5.0 stars</div>
+                    <div class="product-price">{{product.price}}$</div>
+                    {% comment %} <div class="prime-badge">Amazon Prime</div> {% endcomment %}
+                    <a href="{% url 'web:product_detail' pk=product.pk %}" class="btn">Show Details</a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>       
 
+        <script>
+            function openDialog() {
+                document.getElementById('dialogOverlay').style.display = 'flex';
+            }
 
-
-
-</div>
-
-
-<script>
-    function openDialog() {
-        document.getElementById('dialogOverlay').style.display = 'flex';
-    }
-
-    function closeDialog() {
-        document.getElementById('dialogOverlay').style.display = 'none';
-    }
-</script>
-
-</body>
+            function closeDialog() {
+                document.getElementById('dialogOverlay').style.display = 'none';
+            }
+        </script>
+    </body>
 </html>

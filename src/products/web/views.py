@@ -1,6 +1,5 @@
 from django.shortcuts import render, get_object_or_404, redirect
-
-import os
+from django.contrib.auth.models import User
 
 from .models import Product
 from .forms import ProductForm
@@ -33,7 +32,6 @@ def product_update(request, pk):
     if request.method == 'POST':
         form = ProductForm(request.POST,  request.FILES, instance=product)
         if form.is_valid():
-
             form.save()
             return redirect('web:index')
     else:
@@ -42,6 +40,8 @@ def product_update(request, pk):
 
 
 def product_delete(request, pk):
-    product = get_object_or_404(Product, pk=pk)
-    product.delete()
+    user = get_object_or_404(User)
+    if request.user.is_authenticated and user.is_staff:
+        product = get_object_or_404(Product, pk=pk)
+        product.delete()
     return redirect('web:index')

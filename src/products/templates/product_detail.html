@@ -1,36 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    {% load static %}
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Detail</title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-</head>
-<body>
+    <head>
+        {% load static %}
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Product Detail</title>
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    </head>
+    <body>
+        <header>
+        <h1>Product Details</h1>
+        </header>
 
-    <header>
-    <h1>Product Details</h1>
-    </header>
-
-    <div class="container">
-    
-    <h1>{{ product.name }}</h1>
-    <img src="{{ product.image.url }}" alt="{{ product.name }} Image">
-    <p>Description: {{ product.description }}</p>
-    <p>Rating: {{ product.rating }} out of 5.0 stars</p>
-    <p>Price: ${{ product.price }}</p>
-    
-    <a href="{% url 'web:index' %}">Back to Products</a>
-   
-   
-    {% if user.is_authenticated and user.is_staff %}
-    <a href="{% url 'web:product_update' pk=product.pk %}">Edit</a>
-    <a href="{% url 'web:product_delete' pk=product.pk %}">Delete</a> 
-    {% endif %}
-   
-</div>
-</div>
-
-</body>
+        <div class="container">   
+            <h1>{{ product.name }}</h1>
+            <img src="{{ product.image.url }}" alt="{{ product.name }} Image">
+            <p>Description: {{ product.description }}</p>
+            <p>Rating: {{ product.rating }} out of 5.0 stars</p>
+            <p>Price: ${{ product.price }}</p>
+            
+            <a href="{% url 'web:index' %}">Back to Products</a>
+        
+            {% if user.is_authenticated and user.is_staff %}
+            <a href="{% url 'web:product_update' pk=product.pk %}">Edit</a>
+            <a href="{% url 'web:product_delete' pk=product.pk %}">Delete</a> 
+            {% endif %}
+        </div>
+    </body>
 </html>

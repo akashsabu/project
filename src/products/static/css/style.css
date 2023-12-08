@@ -4,19 +4,19 @@ body {
   margin: 0;
   padding: 0;
 }
+
 .container{
   margin-inline: auto;
   width:95%;
   padding-block: 20px;
 }
-header {
- 
+
+header { 
   background-color: #232f3e;
   color: #fff;
   padding: 16px;
   text-align: center;
 }
-
 
 .product-card {
   display: flex;
@@ -64,9 +64,7 @@ header {
   font-size: 1.3em;
   font-weight: bold;
   margin-bottom: 8px;
-
 }
-
 
 .btn {
   display: inline-block;
@@ -81,7 +79,6 @@ header {
 .btn:hover {
   background-color: #d2ac30;
 }
-
 
 .form-body{
   display: flex;
@@ -127,11 +124,9 @@ button,a {
   color:#016ABC ;
 }
 
-
 button:hover {
   background-color: #016ABC;
 }
-
 
 .header_button {
   display: inline-block;
@@ -142,12 +137,6 @@ button:hover {
   border-radius: 4px;
   margin-left: 10px;
 }
-
-
-
-
-
-
 
 .overlay {
   display: none;
@@ -181,7 +170,6 @@ button:hover {
   right: 10px;
 }
 
-/* Style for the trigger button */
 .open-dialog-button {
   background-color: #007BFF;
   color: #fff;
@@ -191,7 +179,6 @@ button:hover {
   cursor: pointer;
 }
 
-/* Hover effect for the trigger button */
 .open-dialog-button:hover {
   background-color: #0056b3;
 }
